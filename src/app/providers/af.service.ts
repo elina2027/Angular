@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import firebase from 'firebase/compat/app';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { AngularFirestore, AngularFirestoreDocument} from '@angular/fire/compat/firestore';
+import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
 import { switchMap } from 'rxjs';
 import { User } from './user';
 
@@ -33,16 +33,16 @@ export class AfService {
 
   loginWithGoogle() {
     const provider = new firebase.auth.GoogleAuthProvider();
+    provider.setCustomParameters({
+      prompt: 'select_account', // Forces the account picker to show up
+    });
     this.afAuth.signInWithPopup(provider).then((credential) => {
       this.updateUser(credential.user as FirebaseUser);
     });
   }
 
   updateUser(user: FirebaseUser) {
-    const userRef: AngularFirestoreDocument<any> = this.afs.doc(
-      `users/${user.uid}`
-    );
-    console.log(user);
+    const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/${user.uid}`);
     const data: User = {
       uid: user.uid,
       email: user.email,
@@ -58,6 +58,8 @@ export class AfService {
   }
 
   logout() {
-    this.afAuth.signOut();
+    this.afAuth.signOut().then(() => {
+      window.location.reload();
+    });
   }
 }

@@ -15,12 +15,12 @@ import { User } from '../providers/user';
 export class LoginPageComponent implements OnInit{
 
   user!: User;
-
-  constructor(public AfService: AfService) {}
-
-  ngOnInit(): void {
-
+  constructor(public AfService: AfService) {
+    this.AfService.user$.subscribe((user) => (this.user = user!));
   }
+
+  ngOnInit() {}
+
 
   login() {
     this.AfService.loginWithGoogle();
@@ -29,5 +29,4 @@ export class LoginPageComponent implements OnInit{
   logout() {
     this.AfService.logout();
   }
-
 }
