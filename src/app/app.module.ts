@@ -10,12 +10,18 @@ import { PagesListComponent } from './pages-list/pages-list.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { AfService } from './providers/af.service';
 import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AppNavbarComponent } from './app-navbar/app-navbar.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import { AdminPageComponent } from './admin-page/admin-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PagesListComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    AppNavbarComponent,
+    HomePageComponent,
+    AdminPageComponent
   ],
   imports: [
     BrowserModule,
@@ -29,4 +35,3 @@ import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/compat/f
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
