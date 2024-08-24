@@ -9,8 +9,8 @@ export const adminGuard: CanActivateFn = (route, state) => {
     map(user => user && user.roles.admin ? true : false),
     tap(isAdmin => {
       if (!isAdmin) {
-        console.error("Access denied - Admins only allowed")
+        console.error("Access denied - Admins only allowed");
       }
     })
-  )
+  );
 };

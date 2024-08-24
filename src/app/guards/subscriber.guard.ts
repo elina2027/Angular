@@ -7,10 +7,10 @@ export const subscriberGuard: CanActivateFn = (route, state) => {
   return inject(AfService).user$.pipe(
     take(1),
     map(user => user && user.roles.subscriber ? true : false),
-    tap(isAdmin => {
-      if (!isAdmin) {
-        console.error("Access denied - Subscribers only allowed")
+    tap(isSubscriber => {
+      if (!isSubscriber) {
+        console.error("Access denied - Subscribers only allowed");
       }
     })
-  )
+  );
 };
