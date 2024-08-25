@@ -15,6 +15,10 @@ example-container mat-elevation-z8 {
   width: 100%;
 }
 
+.mat-column-actions {
+  flex: 0 0 100px;
+}
+
 .table-actions {
     display: flex;
     justify-content: flex-end;
