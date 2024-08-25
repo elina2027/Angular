@@ -15,6 +15,9 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { AppMaterialModule } from './app.material';
 import { AppNavbarComponent } from './app-navbar/app-navbar.component';
 import { AdminPageModule } from './admin-page/admin-page.module';
+import { adminGuard } from './guards/admin.guard';
+import { subscriberGuard } from './guards/subscriber.guard';
+import { MenusService } from './service/menus/menus.service';
 
 @NgModule({
   declarations: [
@@ -36,7 +39,7 @@ import { AdminPageModule } from './admin-page/admin-page.module';
     AppMaterialModule,
     AdminPageModule
   ],
-  providers: [AfService],
+  providers: [AfService, MenusService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
