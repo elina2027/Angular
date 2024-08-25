@@ -1,0 +1,21 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.profileImg {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-left: 8px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Adjust the spacing between the text and image */
+}
+
+.user-info span {
+  font-size: 14px; /* Optional: Adjust font size to match the layout */
+}
