@@ -1,0 +1,16 @@
+.example-container {
+  width: auto;
+  height: 100vh;
+  margin: 10px;
+  border: 1px solid #555;
+  background: #eee;
+}
+
+.example-sidenav-content {
+  height: 100%;
+}
+
+
+.example-sidenav {
+  padding: auto;
+}
