@@ -3,9 +3,9 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { map } from 'rxjs';
 
 export interface Post {
-  title: string,
-  menu_id: string,
-  content: string,
+  title: "",
+  menu_id: "",
+  content: "",
 }
 
 @Injectable({

@@ -11,7 +11,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatSelectModule } from '@angular/material/select';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -30,7 +33,9 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatInputModule,
     MatSortModule,
     MatPaginatorModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSelectModule,
+    ReactiveFormsModule
   ],
 
   exports: [
@@ -45,7 +50,9 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatInputModule,
     MatSortModule,
     MatPaginatorModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSelectModule,
+    ReactiveFormsModule
   ],
 
 })

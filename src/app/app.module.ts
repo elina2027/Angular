@@ -18,6 +18,8 @@ import { AdminPageModule } from './admin-page/admin-page.module';
 import { adminGuard } from './guards/admin.guard';
 import { subscriberGuard } from './guards/subscriber.guard';
 import { MenusService } from './service/menus/menus.service';
+import { PostsService } from './service/posts/posts.service';
+
 
 @NgModule({
   declarations: [
@@ -37,9 +39,8 @@ import { MenusService } from './service/menus/menus.service';
     AngularFirestoreModule,
     AppRoutingModule,
     AppMaterialModule,
-    AdminPageModule
   ],
-  providers: [AfService, MenusService],
+  providers: [AfService, MenusService, PostsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
