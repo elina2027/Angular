@@ -5,7 +5,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { MenusComponent } from './menus/menus.component';
 import { PostsComponent } from './posts/posts.component';
 
-const routes: Routes = [
+const ADMIN_ROUTES: Routes = [
   {
     path: '',
     component: AdminPageComponent,
@@ -30,5 +30,8 @@ const routes: Routes = [
   },
 ];
 
-
-export const AdminRoutingModule = RouterModule.forChild(routes);
+@NgModule({
+  imports: [RouterModule.forChild(ADMIN_ROUTES)],
+  exports: [RouterModule]
+})
+export class AdminRoutingModule { }

@@ -8,17 +8,15 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AppRoutingModule } from './app-routing.module';
 import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
-import { PagesListComponent } from './pages-list/pages-list.component';
+import { PagesListComponent } from './front-page/pages-list/pages-list.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { AfService } from './providers/af.service';
-import { HomePageComponent } from './home-page/home-page.component';
+import { HomePageComponent } from './front-page/home-page/home-page.component';
 import { AppMaterialModule } from './app.material';
 import { AppNavbarComponent } from './app-navbar/app-navbar.component';
-import { AdminPageModule } from './admin-page/admin-page.module';
-import { adminGuard } from './guards/admin.guard';
-import { subscriberGuard } from './guards/subscriber.guard';
 import { MenusService } from './service/menus/menus.service';
 import { PostsService } from './service/posts/posts.service';
+import { FrontPageComponent } from './front-page/front-page.component';
 
 
 @NgModule({
@@ -27,7 +25,8 @@ import { PostsService } from './service/posts/posts.service';
     PagesListComponent,
     LoginPageComponent,
     HomePageComponent,
-    AppNavbarComponent
+    AppNavbarComponent,
+    FrontPageComponent
   ],
 
   imports: [
