@@ -19,12 +19,12 @@ export const FRONT_ROUTES: Routes = [
         component: PagesListComponent,
       },
       {
-        path: 'pages/:url',  // This should match '/pages/menu1'
+        path: 'pages/:url',  
         component: PagesComponent,
       },
       {
         path: '**',
-        redirectTo: 'home',  // Redirects to 'home' if no match is found
+        redirectTo: 'home',
       },
     ],
   },
