@@ -17,6 +17,7 @@ import { AppNavbarComponent } from './app-navbar/app-navbar.component';
 import { MenusService } from './service/menus/menus.service';
 import { PostsService } from './service/posts/posts.service';
 import { FrontPageComponent } from './front-page/front-page.component';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
@@ -38,7 +39,9 @@ import { FrontPageComponent } from './front-page/front-page.component';
     AngularFirestoreModule,
     AppRoutingModule,
     AppMaterialModule,
+    MatIconModule
   ],
+
   providers: [AfService, MenusService, PostsService],
   bootstrap: [AppComponent]
 })

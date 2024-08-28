@@ -1,13 +1,13 @@
-import { Component, ViewChild } from '@angular/core';
-import { MatSidenav } from '@angular/material/sidenav';
+import { Component } from '@angular/core';
 import { AfService } from '../../providers/af.service';
 import { User } from '../../providers/user';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatButton } from '@angular/material/button';
+import { MatButton, MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
+import { MenusService } from '../../service/menus/menus.service';
 
 @Component({
   selector: 'app-navbar',
@@ -16,20 +16,26 @@ import { MatMenuModule } from '@angular/material/menu';
     CommonModule,
     RouterModule,
     MatToolbarModule,
-    MatButton,
+    MatButtonModule,
     MatIconModule,
     MatMenuModule,
   ],
   templateUrl: './app-navbar.component.html',
-  styleUrls: ['./app-navbar.component.css'],
+  styleUrl: './app-navbar.component.css',
 })
 export class AppNavbarComponent {
-  @ViewChild('drawer') drawer!: MatSidenav;
   user!: User;
+  menusList: any;
 
-  constructor(public afService: AfService) {}
+  constructor(
+    public afService: AfService,
+    private menusService: MenusService
+  ) {}
 
   ngOnInit() {
     this.afService.user$.subscribe((user: any) => (this.user = user));
+    this.menusService.getMenus().subscribe((menus: any) => {
+      this.menusList = menus;
+    });
   }
 }

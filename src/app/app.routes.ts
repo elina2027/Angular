@@ -4,12 +4,10 @@ import { adminGuard } from './guards/admin.guard';
 
 export const APP_ROUTES: Routes = [
   {
-    path: 'admin',
+    path: 'home',
     loadChildren: () =>
-      import('./admin-page/admin-routing.module').then((mod) => mod.AdminRoutingModule),
-    canActivate: [adminGuard],
+      import('./front-page/front-page.module').then((m) => m.FrontPageModule),
   },
-
   {
     path: 'login',
     component: LoginPageComponent,
@@ -17,7 +15,7 @@ export const APP_ROUTES: Routes = [
   {
     path: 'admin',
     loadChildren: () =>
-      import('./admin-page/admin-routing.module').then((mod) => mod.AdminRoutingModule),
+      import('./admin-page/admin-page.module').then((m) => m.AdminPageModule),
     canActivate: [adminGuard],
   },
   {
